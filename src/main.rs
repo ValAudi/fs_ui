@@ -1,16 +1,15 @@
 mod app;
 mod upload;
 mod components;
+mod template;
 
-use app::*;
+// use app::*;
 use leptos::prelude::*;
-use upload::Upload;
+use template::Landingpage;
 
 fn main() {
     console_error_panic_hook::set_once();
     mount_to_body(|| {
-        view! {
-            <Upload />
-        }
-    })
+        view! { <Landingpage /> }
+    })   
 }

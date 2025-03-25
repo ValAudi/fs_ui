@@ -20,7 +20,7 @@ pub fn App() -> impl IntoView {
     let (greet_msg, set_greet_msg) = signal(String::new());
 
     let update_name = move |ev| {
-        let v = event_target_value(&ev);
+        let v: String = event_target_value(&ev);
         set_name.set(v);
     };
 
@@ -45,23 +45,19 @@ pub fn App() -> impl IntoView {
 
             <div class="row">
                 <a href="https://tauri.app" target="_blank">
-                    <img src="public/tauri.svg" class="logo tauri" alt="Tauri logo"/>
+                    <img src="public/tauri.svg" class="logo tauri" alt="Tauri logo" />
                 </a>
                 <a href="https://docs.rs/leptos/" target="_blank">
-                    <img src="public/leptos.svg" class="logo leptos" alt="Leptos logo"/>
+                    <img src="public/leptos.svg" class="logo leptos" alt="Leptos logo" />
                 </a>
             </div>
             <p>"Click on the Tauri and Leptos logos to learn more."</p>
 
             <form class="row" on:submit=greet>
-                <input
-                    id="greet-input"
-                    placeholder="Enter a name..."
-                    on:input=update_name
-                />
+                <input id="greet-input" placeholder="Enter a name..." on:input=update_name />
                 <button type="submit">"Greet"</button>
             </form>
-            <p>{ move || greet_msg.get() }</p>
+            <p>{move || greet_msg.get()}</p>
         </main>
     }
 

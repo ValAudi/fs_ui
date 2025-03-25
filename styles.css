@@ -110,3 +110,330 @@ button {
     background-color: #0f0f0f69;
   }
 }
+
+/* ******************************* Landing Page Styles ****************************** */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.top-bar {
+  height: 50px;
+  background-color: #1e1e1e;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  flex-shrink: 0; 
+  border-bottom: 1px solid var(--outline-dimmest);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.sidebar {
+  flex: 2;
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid var(--outline-dimmest);
+  padding-top: 20px;
+}
+
+.sidebar button {
+  background-color: transparent;
+  border: 1px solid var(--outline-dimmest);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.sidebar .separator {
+  width: 90%;
+  height: 1px;
+  background-color: var(--outline-dimmest);
+  margin: 10px 0;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  width: 90%;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar a span:first-child {
+  margin-right: 10px;
+}
+
+.content-area {
+  flex: 8;
+  background-color: #3a3f4b;
+  color: white;
+  padding: 20px;
+  display: flex; /* Add flexbox to center content */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center horizontally */
+}
+
+.upload-container {
+  width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  margin-top: 20px; /* Add margin to separate from content-area top */
+}
+
+.upload-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+}
+
+.not-found {
+  text-align: center;
+}
+
+
+
+/* ************************* Column mapping styles ************************* */
+
+.column-mapping-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.column-mapping-item > div { /* targeting the first child div */
+  display: flex;
+  gap: 100px;
+  width: 100%;
+}
+
+.column-mapping-item > div > div:first-child { /* targeting the first child of the first child div */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-mapping-item > div > div:last-child { /* targeting the last child of the first child div */
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-mapping-item input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #424242;
+  border-radius: 4px;
+  background-color: #303030;
+  color: #e0e0e0;
+}
+
+.column-mapping-item select {
+  padding: 8px;
+  border: 1px solid #424242;
+  border-radius: 4px;
+  background-color: #303030;;
+  width: 100%; 
+  color: #000000;
+  appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+
+.column-mapping-item select:focus {
+  outline: none;
+  border-color: #007bff; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.column-mapping-item select option:hover {
+  background-color: #f0f0f0; 
+}
+
+.column-mapping-item select option {
+  color: #000000;
+}
+
+/* .custom-select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #424242;
+  border-radius: 4px;
+  background-color: #303030;
+  color: #000000;
+  cursor: pointer;
+  user-select: none;
+}
+
+.selected-option {
+  padding: 8px;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #303030;
+  border: 1px solid #424242;
+  border-top: none;
+  max-height: 150px; 
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.dropdown-options li {
+  padding: 8px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.dropdown-options li:hover {
+  background-color: #007bff;
+} */
+
+/*********************** input textbox styles *****************************/
+
+.text-input {
+  padding: 12px;
+  border: 1px solid #424242;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+  background-color: #303030;
+  color: #e0e0e0;
+}
+
+.text-input:focus {
+  border-color: #64b5f6;
+}
+
+/******************************* Submit button styles ****************************/
+.submit-button {
+  background-color: #64b5f6;
+  color: #1e1e1e;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #42a5f5;
+}
+
+/*  */
+.file-display {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.file-name {
+  color: #bdbdbd;
+  background-color: #303030;
+  padding: 5px 8px;
+  border-radius: 4px;
+  margin-right: auto;
+}
+
+.close-button {
+  background-color: #333;
+  color: #e0e0e0;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+}
+
+.close-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/*  */
+.radio-button-label {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.file-upload-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border: 1px dashed #5c5c5c;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: border-color 0.3s;
+  color: #bdbdbd;
+}
+
+.file-upload-label:hover {
+  border-color: #64b5f6;
+}
+
+.file-upload-icon {
+  width: 24px; /* Adjust as needed */
+  height: 24px; /* Adjust as needed */
+  margin-right: 8px; /* Add space between icon and text */
+}
+
+.file-upload-text {
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.file-upload-input {
+  display: none;
+}
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.notification.hide {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
