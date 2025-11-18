@@ -19,10 +19,10 @@ fn greet(name: &str) -> String {
 #[tauri::command]
 fn setup_new_user(payload: VendorInfo) -> Result<String, String> {
     println!("{:#?}", payload);
-    // let socket_path = env::var("SOCKET_LOCATION").map_err(|e| e.to_string())?;
-    // let mut stream = UnixStream::connect(&socket_path).map_err(|e| e.to_string())?;
-    // let message = r#"{"task": "spawn_task"}\n\n\n"#;
-    // stream.write_all(message.as_bytes()).map_err(|e| e.to_string())?;
+    let socket_path = env::var("SOCKET_LOCATION").map_err(|e| e.to_string())?;
+    let mut stream = UnixStream::connect(&socket_path).map_err(|e| e.to_string())?;
+    let msg = serde_json::to_string(&payload).map_err(|e| e.to_string())?;
+    stream.write_all(msg.as_bytes()).map_err(|e| e.to_string())?;
     Ok(String::from("Gotten into the rust side!!"))
 }
 
